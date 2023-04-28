@@ -1,3 +1,3 @@
 <?php
-mysqli_connect("localhost","root","","tbasset") or die("error");
+$con=mysqli_connect("localhost","root","","tbasset") or die("error");
 ?>
