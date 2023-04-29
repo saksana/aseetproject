@@ -1,6 +1,7 @@
 <?php
 require 'connect/connect.php';
-$sql = "select * from tbadmin order by name asc";
+$name=$_POST["name"];
+$sql = "select * from tbadmin where name LIKE '%$name%'";
 $result = mysqli_query($con, $sql);
 $count = mysqli_num_rows($result);
 $no = 1;
@@ -46,7 +47,7 @@ $no = 1;
                 <div>
                     <form action="searchadmin.php" method="POST">
                         <label for="">ຄົ້ນຫາ</label>
-                        <input type="text" placeholder="ປ້ອນຊື່ພະນັກງານ" name="name" class="form-control">
+                        <input type="text" placeholder="ປ້ອນຊື່ພະນັກງານ" name="name" class="form-control" value="<?php echo $name ?>">
                         <input type="submit" value="ຄົ້ນຫາ" class="btn btn-dark mt-2 mb-3 px-4">
                     </form>
                     
@@ -104,7 +105,7 @@ $no = 1;
                     <?php } ?>
                 </div>
                 <div class="mt-3">
-                    <a class="btn btn-primary mx-1" href="frmsaveadmin.php">ເພີ່ມຂໍ້ມູນ</a>
+                    <a class="btn btn-danger" href="admin.php">ຍົກເລີກການຄົ້ນຫາ</a>
                 </div>
             </div>
 
