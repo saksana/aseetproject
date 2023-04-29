@@ -7,7 +7,7 @@
             <div class="dropdown-container ps-3">
                 <a href="#">- ອຸປະກອນ</a>
                 <a href="#">- ຜູ້ໃຊ້ອຸປະກອນ</a>
-                <a href="frmsaveadmin.php">- ຜູ້ດູແລລະບົບ</a>
+                <a href="admin.php">- ຜູ້ດູແລລະບົບ</a>
             </div>
             <a href="#about">ສົ່ງອອກ</a>
             <a href="#about">ຮັບເຂົ້າ</a>

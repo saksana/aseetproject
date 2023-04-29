@@ -1,3 +1,10 @@
+<?php
+require 'connect/connect.php';
+$id = $_GET["id"];
+$sql = "select * from tbadmin where id='$id'";
+$result = mysqli_query($con, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,43 +39,46 @@
                         class="fs-6"></span></span>
             </div>
             <div class="container">
-                <form action="saveadmin.php" method="POST">
+                <form action="editadmin.php" method="POST">
                     <div class="mt-2">
                         <span class="px-2 fs-4"
-                            style="border-left:8px solid #da0b0b;"><b>ບັນທຶກຂໍ້ມູນຜູ້ດູແລລະບົບ</b></span>
-                            <input style="float:right" class="btn btn-warning" type="reset" value="ລ້າງຂໍ້ມູນ">
+                            style="border-left:8px solid #da0b0b;"><b>ແກ້ໄຂຂໍ້ມູນຜູ້ດູແລລະບົບ</b></span>
                         <hr>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 py-3">
                             <label for="" class="form-label"><b>ລະຫັດ</b></label>
-                            <input type="text" name="id" class="form-control" id="">
+                            <input type="text" name="id" class="form-control" id="" value="<?php echo $row['id']; ?>">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 py-3">
                             <label for="" class="form-label"><b>ຊື່ຜູ້ດູແລລະບົບ</b></label>
-                            <input type="text" name="name" class="form-control" id="">
+                            <input type="text" name="name" class="form-control" id=""
+                                value="<?php echo $row['name']; ?>">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 py-3">
                             <label for="" class="form-label"><b>ພະແນກ</b></label>
-                            <input type="text" name="department" class="form-control" id="">
+                            <input type="text" name="department" class="form-control" id=""
+                                value="<?php echo $row['department']; ?>">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 py-3">
                             <label for="" class="form-label"><b>ໜ່ວຍງານ</b></label>
-                            <input type="text" name="section" class="form-control" id="">
+                            <input type="text" name="section" class="form-control" id=""
+                                value="<?php echo $row['section']; ?>">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 py-3">
                             <label for="" class="form-label"><b>ຊື່ຜູ້ໃຊ້</b></label>
-                            <input type="text" name="username" class="form-control" id="">
+                            <input type="text" name="username" class="form-control" id=""
+                                value="<?php echo $row['username']; ?>">
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12 py-3">
                             <label for="" class="form-label"><b>ລະຫັດຜ່ານ</b></label>
-                            <input type="text" name="password" class="form-control" id="">
+                            <input type="text" name="password" class="form-control" id=""
+                                value="<?php echo $row['password']; ?>">
                         </div>
                     </div>
                     <div class="mt-3">
-                        <input class="btn btn-primary mx-1" type="submit" value="ບັນທຶກຂໍ້ມູນ">
-                        <a href="admin.php" class="btn btn-danger px-3">ຍົກເລີກ</a>
-                        
+                        <input class="btn btn-primary mx-1" type="submit" value="ອັບເດດຂໍ້ມູນ">
+                        <a href="admin.php" class="btn btn-danger">ຍົກເລີກ</a>
                     </div>
                 </form>
             </div>
